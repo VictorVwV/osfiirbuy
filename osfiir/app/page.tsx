@@ -28,14 +28,26 @@ export default function Home() {
       }}
     >
       <Image
-        src="/product1.jpg"
+        src="/product1.jpeg"
         alt="Product 1"
         width={300}
         height={200}
       />
       <h3>Product Name</h3>
       <p>$29.99</p>
-      <button>Add to Cart</button>
+      <button
+  style={{
+    marginTop: "10px",
+    padding: "10px 20px",
+    backgroundColor: "#0070f3",
+    color: "#fff",
+    border: "none",
+    borderRadius: "4px",
+    cursor: "pointer",
+  }}
+>
+  Add to Cart
+</button>
     </div>
   </div>
 </main>
