@@ -1,5 +1,9 @@
 import Image from "next/image";
+/*
 
+cd C:\Users\User\Desktop\OSFIIR\osfiir
+npm run dev
+*/
 export default function Home() {
     return (
         <main style={{ padding: "40px", fontFamily: "sans-serif" }}>
