@@ -19,7 +19,7 @@ export default function Home() {
           <div style={{ border: "1px solid #ddd", padding: "20px", borderRadius: "8px" }}>
             <Image src="/product1.jpeg" alt="Product 1" width={300} height={200} />
             <h3>Halba</h3>
-            <p>$29.99</p>
+            <p>80 RON</p>
             <button
               style={{
                 marginTop: "10px",
@@ -33,7 +33,7 @@ export default function Home() {
               onClick={() =>
                 addToCart({
                   name: "Halba",
-                  price: 29.99,
+                  price: 80,
                   image: "/product1.jpeg",
                 })
               }
