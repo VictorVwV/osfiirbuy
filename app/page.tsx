@@ -1,10 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Navbar from "./Navbar";
-
-/*
-cd C:\Users\User\Desktop\OSFIIR\osfiir
-npm run dev
-*/
+import { addToCart } from "./cart";
 
 export default function Home() {
   return (
@@ -51,6 +49,13 @@ export default function Home() {
                 borderRadius: "4px",
                 cursor: "pointer",
               }}
+              onClick={() =>
+                addToCart({
+                  name: "Halba",
+                  price: 29.99,
+                  image: "/product1.jpeg",
+                })
+              }
             >
               Add to Cart
             </button>
