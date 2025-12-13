@@ -3,7 +3,10 @@
 import Image from "next/image";
 import Navbar from "./Navbar";
 import { addToCart } from "./cart";
-
+/*git add .
+git commit -m "Describe your changes"
+git push
+*/
 export default function Home() {
   return (
     <>
