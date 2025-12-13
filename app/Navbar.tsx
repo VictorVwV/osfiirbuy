@@ -17,7 +17,7 @@ export default function Navbar() {
         Home
       </Link>
 
-      <Link href="/cart" style={{ textDecoration: "none", color: "#333", fontSize: "20px" }}>
+      <Link href="/cart1.tsx" style={{ textDecoration: "none", color: "#333", fontSize: "20px" }}>
         Cart
       </Link>
     </nav>
