@@ -1,7 +1,7 @@
-"use client"; // ensures this runs in the browser
+"use client"; 
 
 import { collection, addDoc } from "firebase/firestore";
-import { db } from "./src/firebase"; // adjust path if firebase.js is in src/lib etc.
+import { db } from "./src/firebase"; 
 
 export async function addToCart(product) {
   try {

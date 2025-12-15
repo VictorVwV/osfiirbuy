@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <Navbar />
       <main style={{ padding: "40px", fontFamily: "sans-serif" }}>
-        <h1 style={{ fontSize: "36px", marginBottom: "20px" }}>
+        <h1 style={{marginTop:"5%", fontSize: "36px", marginBottom: "20px" }}>
           Welcome to OSFIIR E-Commerce 🛒
         </h1>
         <p style={{ marginBottom: "40px" }}>
