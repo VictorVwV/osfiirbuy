@@ -1,49 +1,83 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import Navbar from "./Navbar";
-import { addToCart } from "./cart";
-/*git add .
-git commit -m "Describe your changes"
-git push
-*/
+
 export default function Home() {
+  const products = [
+    { name: "Halba", price: 50, image: "./halbaO.jpg" },
+    { name: "T-shirt", price: 70, image: "/product2.jpg" },
+    { name: "Pullover", price: 90, image: "/product3.jpg" }
+  ];
+
   return (
     <>
       <Navbar />
       <main style={{ padding: "40px", fontFamily: "sans-serif" }}>
-        <h1 style={{marginTop:"5%", fontSize: "36px", marginBottom: "20px" }}>
+        <h1 style={{ marginTop: "5%", fontSize: "36px", marginBottom: "20px" }}>
           Welcome to OSFIIR E-Commerce 🛒
         </h1>
         <p style={{ marginBottom: "40px" }}>
           Browse our latest products and enjoy fast delivery.
         </p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px" }}>
-          <div style={{ border: "1px solid #ddd", padding: "20px", borderRadius: "8px" }}>
-            <Image src="/product1.jpeg" alt="Product 1" width={300} height={200} />
-            <h3>Halba</h3>
-            <p>80 RON</p>
-            <button
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: "20px",
+          }}
+        >
+          {products.map((product, index) => (
+            <div
+              key={index}
               style={{
-                marginTop: "10px",
-                padding: "10px 20px",
-                backgroundColor: "#0070f3",
-                color: "#fff",
-                border: "none",
-                borderRadius: "4px",
-                cursor: "pointer",
+                border: "1px solid #ddd",
+                padding: "20px",
+                borderRadius: "8px",
+                textAlign: "center",
               }}
-              onClick={() =>
-                addToCart({
-                  name: "Halba",
-                  price: 80,
-                  image: "/product1.jpeg",
-                })
-              }
             >
-              Add to Cart
-            </button>
-          </div>
+              <Link
+                href={`/produsul?name=${product.name}&price=${product.price}&image=${product.image}`}
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  width={200}
+                  height={200}
+                  style={{ borderRadius: "4px", cursor: "pointer" }}
+                />
+              </Link>
+
+              <Link
+                href={`/produsul?name=${product.name}&price=${product.price}&image=${product.image}`}
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <h3
+                  style={{
+                    marginTop: "10px",
+                    fontSize: "18px",
+                    fontWeight: "bold",
+                  }}
+                >
+                  {product.name}
+                </h3>
+              </Link>
+
+              {/* Price (not clickable) */}
+              <p
+                style={{
+                  color: "#333",
+                  marginTop: "8px",
+                  fontSize: "16px",
+                }}
+              >
+                {product.price} RON
+              </p>
+            </div>
+          ))}
         </div>
       </main>
     </>
