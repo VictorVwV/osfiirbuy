@@ -6,9 +6,9 @@ import Navbar from "./Navbar";
 
 export default function Home() {
   const products = [
-    { name: "Halba", price: 50, image: "./halbaO.jpg" },
-    { name: "T-shirt", price: 70, image: "/product2.jpg" },
-    { name: "Pullover", price: 90, image: "/product3.jpg" }
+    { name: "Halba", price: 50, image: "./halbaO.jpg", description: "Nu fii ca orice betiv de pretutindeni, fii betiv unicat cu halba OSFIIR. E frumoasă, e tot ce vrei de la viață" },
+    { name: "T-shirt", price: 70, image: "/product2.jpg", description: "Un pulover"  },
+    { name: "Pullover", price: 90, image: "/product3.jpg",description:"Un tricou"  },
   ];
 
   return (
@@ -40,35 +40,33 @@ export default function Home() {
                 textAlign: "center",
               }}
             >
-              <Link
-                href={`/produsul?name=${product.name}&price=${product.price}&image=${product.image}`}
-                style={{ textDecoration: "none", color: "inherit" }}
+             <Link
+              href={`/produsul?name=${product.name}&price=${product.price}&image=${product.image}&description=${encodeURIComponent(product.description)}`}
+              style={{ textDecoration: "none", color: "inherit" }}
               >
                 <Image
-                  src={product.image}
-                  alt={product.name}
-                  width={200}
-                  height={200}
-                  style={{ borderRadius: "4px", cursor: "pointer" }}
+                src={product.image}
+                alt={product.name}
+                width={200}
+                height={200}
+                style={{ borderRadius: "4px", cursor: "pointer" }}
                 />
               </Link>
 
               <Link
-                href={`/produsul?name=${product.name}&price=${product.price}&image=${product.image}`}
-                style={{ textDecoration: "none", color: "inherit" }}
+              href={`/produsul?name=${product.name}&price=${product.price}&image=${product.image}&description=${encodeURIComponent(product.description)}`}
+              style={{ textDecoration: "none", color: "inherit" }}
               >
-                <h3
-                  style={{
-                    marginTop: "10px",
-                    fontSize: "18px",
-                    fontWeight: "bold",
-                  }}
-                >
-                  {product.name}
-                </h3>
+              <h3
+              style={{
+              marginTop: "10px",
+             fontSize: "18px",
+             fontWeight: "bold",
+              }}
+              >
+              {product.name}
+              </h3>
               </Link>
-
-              {/* Price (not clickable) */}
               <p
                 style={{
                   color: "#333",

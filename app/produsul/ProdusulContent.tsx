@@ -2,7 +2,6 @@
 
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
-import { useState } from "react";
 import { addToCart } from "../cart";
 
 export default function ProdusulContent() {
@@ -10,11 +9,10 @@ export default function ProdusulContent() {
   const name = searchParams.get("name");
   const price = searchParams.get("price");
   const image = searchParams.get("image");
-
-  const [note, setNote] = useState("");
+  const description = searchParams.get("description");
 
   const handleAddToCart = () => {
-    addToCart({ name, price, image, note });
+    addToCart({ name, price, image });
   };
 
   return (
@@ -37,7 +35,7 @@ export default function ProdusulContent() {
         <div style={{ flex: 1 }}>
           <p style={{ fontSize: "20px", marginBottom: "20px" }}>{price} RON</p>
 
-          {/* Description */}
+          {/* Dynamic description */}
           <p
             style={{
               width: "100%",
@@ -49,8 +47,7 @@ export default function ProdusulContent() {
               marginBottom: "20px",
             }}
           >
-            Nu fii ca orice betiv de pretutindeni, fii betiv unicat cu halba
-            OSFIIR. E frumoasă, e tot ce vrei de la viață.
+            {description}
           </p>
 
           <button
