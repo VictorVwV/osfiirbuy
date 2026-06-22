@@ -6,7 +6,7 @@ import Navbar from "./Navbar";
 
 export default function Home() {
   const products = [
-    { name: "Halba", price: 50, image: "./halbaO.jpg", description: "Nu fii ca orice betiv de pretutindeni, fii betiv unicat cu halba OSFIIR. E frumoasă, e tot ce vrei de la viață" },
+    { name: "Halba", price: 50, image: "/halbaO.jpg", description: "Nu fii ca orice betiv de pretutindeni, fii betiv unicat cu halba OSFIIR. E frumoasă, e tot ce vrei de la viață" },
     { name: "T-shirt", price: 70, image: "/product2.jpg", description: "Un pulover"  },
     { name: "Pullover", price: 90, image: "/product3.jpg",description:"Un tricou"  },
   ];
